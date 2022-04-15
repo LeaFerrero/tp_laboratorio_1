@@ -11,10 +11,13 @@
 #ifndef ENTRADAS_H_
 #define ENTRADAS_H_
 
-float pedirFlotante(char mensaje[]);
+char pedirLetra(char []);
 
-char pedirLetra(char mensaje[]);
+char reingresarChar(char, char, char, char [], char []);
 
-float reingresar(float numero, int aComparar, char mensajeUno[], char mensajeDos[]);
+float pedirFlotante(char []);
+
+float reingresarFlotante(float, int, char [], char []);
+
 
 #endif /* ENTRADAS_H_ */

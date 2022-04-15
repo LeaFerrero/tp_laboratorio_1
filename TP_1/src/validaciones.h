@@ -11,8 +11,8 @@
 #ifndef VALIDACIONES_H_
 #define VALIDACIONES_H_
 
-int validarEsMayor(int, int);
+int validarEsMayor(float, int);
 
-char validarLetraSN(char letra);
+char validarLetra(char, char, char);
 
 #endif /* VALIDACIONES_H_ */

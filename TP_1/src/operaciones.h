@@ -10,12 +10,18 @@
 #ifndef OPERACIONES_H_
 #define OPERACIONES_H_
 
+float sumarFlotante(int, int);
+
+float restarFlotante(float, float);
+
+float dividirFlotante(float, float);
+
+float multilicarFlotante(float, float);
+
 float calcularDescuento(float, int);
 
 float calcularAumento(float, int);
 
-float dividirFlotante(float numeroA, float numeroB);
-
-float pasarAMoneda(float valor, float moneda);
+float pasarAMoneda(float, float);
 
 #endif /* OPERACIONES_H_ */

@@ -11,6 +11,7 @@
 #include "entradas.h"
 #include "validaciones.h"
 #include "operaciones.h"
+#include "salidas.h"
 
 int main(void)
 {
@@ -61,12 +62,20 @@ int main(void)
 		{
 			printf("(km = %.2f)", km);
 		}
-		printf("\n2. Ingresar Precio de Vuelos:");
+		printf("\n2. Ingresar Precio de Vuelos: ");
+		if(flagAerolineas == 1)
+		{
+			printf("(Aerolíneas = %.2f) ", precioAerolineas);
+		}
+		if(flagLatam == 1)
+		{
+			printf("(Latam = %.2f) ", precioAerolineas);
+		}
 		printf("\n3. Calcular Costos");
 		printf("\n4. Informar Resultados");
 		printf("\n5. Carga Forzada");
-		printf("\n6. Salir\n\n");
-		printf("Ingrese una opcion: ");
+		printf("\n6. Salir\n");
+		printf("\nIngrese una opcion: ");
 		scanf("%d", &opcion);
 
 
@@ -78,7 +87,7 @@ int main(void)
 				if(validarEsMayor(km, minimo) == 1)
 				{
 					flagKm = 1;
-					printf("\n¡Kilómetros ingresados con éxito!.\n\n");
+					printf("\n¡Kilómetros ingresados con éxito!.\n");
 				}
 
 			break;
@@ -121,7 +130,7 @@ int main(void)
 
 						default:
 							printf("\nError, opcion no valida, volviendo al menú.\n");
-
+						break;
 					}
 				}
 				while(opcionB != 3);
@@ -133,13 +142,13 @@ int main(void)
 				{
 					debitoAerolineas = calcularDescuento(precioAerolineas, descuento);
 					creditoAerolineas = calcularAumento(precioAerolineas, aumento);
-					bitCoinAerolineas = dividirFlotante(precioAerolineas, bitcoin);
-					aerolineasPorKm = dividirFlotante(precioAerolineas, km);
+					bitCoinAerolineas = dividir(precioAerolineas, bitcoin);
+					aerolineasPorKm = dividir(precioAerolineas, km);
 
 					debitoLatam = calcularDescuento(precioLatam, descuento);
 					creditoLatam = calcularAumento(precioLatam, aumento);
-					bitCoinLatam = dividirFlotante(precioLatam, bitcoin);
-					latamPorKm = dividirFlotante(precioLatam, km);
+					bitCoinLatam = dividir(precioLatam, bitcoin);
+					latamPorKm = dividir(precioLatam, km);
 
 					if(precioAerolineas > precioLatam)
 					{
@@ -151,7 +160,7 @@ int main(void)
 					}
 
 					flagCalculos =	1;
-					printf("Se estan calculando los costos.");
+					printf("\nSe han calculando los costos.\n");
 				}
 				else
 				{
@@ -205,19 +214,35 @@ int main(void)
 				flagKm = 1;
 				flagAerolineas = 1;
 				flagLatam = 1;
+
+				debitoAerolineas = calcularDescuento(precioAerolineas, descuento);
+				creditoAerolineas = calcularAumento(precioAerolineas, aumento);
+				bitCoinAerolineas = dividir(precioAerolineas, bitcoin);
+				aerolineasPorKm = dividir(precioAerolineas, km);
+
+				debitoLatam = calcularDescuento(precioLatam, descuento);
+				creditoLatam = calcularAumento(precioLatam, aumento);
+				bitCoinLatam = dividir(precioLatam, bitcoin);
+				latamPorKm = dividir(precioLatam, km);
+
+				diferenciaPrecio = precioLatam - precioAerolineas;
+
+				imprimirResultados(km, precioAerolineas, precioLatam, debitoAerolineas, debitoLatam, creditoAerolineas, creditoLatam, bitCoinAerolineas, bitCoinLatam, aerolineasPorKm, latamPorKm, diferenciaPrecio);
+
 			break;
 
 			case 6:
-				salir = pedirLetra("Desea salir? 'S' o 'N' ");
-				salir = reingresarChar(salir, 'S', 'N', "¡ERROR! Opción no valida.", "Desea salir? 'S' para si, o 'N' para No.");
+				salir = pedirLetra("\n¿Desea salir? 'S' o 'N' ");
+				salir = reingresarChar(salir, 'S', 'N', "\n¡ERROR! Opción no valida.", " ¿Desea salir? ('S' para si, o 'N' para No.): ");
 				if((salir == 'S') == 1)
 				{
-					printf("¡Gracias, vuelva pronto!");
+					printf("\n¡Gracias, vuelva pronto!");
 				}
 			break;
 
 			default:
 				printf("\n¡ERROR! Opcion no valida, volviendo al menú.\n");
+			break;
 
 		}
 

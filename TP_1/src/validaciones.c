@@ -10,7 +10,7 @@
 
 
 /// @fn int validarEsMayor(int, int)
-/// @brief Recive un flotante y un entero y los compara con un entero,
+/// @brief Recibe un flotante y un entero y los compara con un entero,
 /// si el flotante es mas chico que entero retorna 0,
 /// si el flotante es mas grande retorna 1.
 ///
@@ -32,7 +32,7 @@ int validarEsMayor(float numero, int comparante)
 }
 
 /// @fn char validarLetra(char, char, char)
-/// @brief Recive tres letras, y compara la primer letra que recive con las otras dos.
+/// @brief Recibe tres letras, y compara la primer letra que recibe con las otras dos.
 /// si la primer letra es distinta de las dos letras con las que se compara retorna 0.
 /// si la primer es igyal a alguna de las otras dos letras retorna 1.
 ///

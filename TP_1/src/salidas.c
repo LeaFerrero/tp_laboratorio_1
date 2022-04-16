@@ -8,6 +8,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/// @fn void imprimirResultados(float, float, float, float, float, float, float, float, float, float, float, float)
+/// @brief Recibe los los flotantes y los imprime con un mensaje para informar al usuario.
+///
+/// @param km Los kilometros ingresados
+/// @param precioAerolineas El precio de Aerolineas
+/// @param precioLatam El precio de latam
+/// @param debitoAerolineas El precio de Aerolineas a pagar con debito
+/// @param debitoLatam El precio de Latam  a pagar con debiro
+/// @param creditoAerolineas El precio de Aerolineas a pagar con tarjeta de credito
+/// @param creditoLatam	El precio de Latam a pagar con tarjeta de credito
+/// @param bitCoinAerolineas El precio de Aerolineas a pagar con BitCoin
+/// @param bitCoinLatam El precio de Latam a pagar con BitCoin
+/// @param aerolineasPorKm El costo por kilometro de Aerolineas
+/// @param latamPorKm El costo por kilometro de Latam
+/// @param diferenciaPrecio La diferencia de precio que hay entre el precio de ambas empresas
 void imprimirResultados(float km, float precioAerolineas, float precioLatam, float debitoAerolineas,
 						float debitoLatam, float creditoAerolineas, float creditoLatam, float bitCoinAerolineas,
 						float bitCoinLatam, float aerolineasPorKm, float latamPorKm, float diferenciaPrecio)

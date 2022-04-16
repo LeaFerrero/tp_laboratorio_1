@@ -2,7 +2,7 @@
  * salidas.h
  *
  *  Created on: 15 abr. 2022
- *      Author: wilo waiko
+ *      Author: Leandro Ferrero
  */
 
 #ifndef SALIDAS_H_

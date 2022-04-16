@@ -1,0 +1,66 @@
+/*
+ * operaciones.c
+ *
+ *  Created on: 10 abr. 2022
+ *      Author: Leandro Ferrero
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+float calcularDescuento(float numero, int porcentaje)
+{
+	float numeroDescontado;
+	float numeroConDescuento;
+
+	numeroDescontado = numero * porcentaje / 100;
+	numeroConDescuento = numero - numeroDescontado;
+
+	return numeroConDescuento;
+}
+
+float calcularAumento(float numero, int porcentaje)
+{
+	float numeroAumentado;
+	float numeroConAumento;
+
+	numeroAumentado = numero * porcentaje / 100;
+	numeroConAumento = numero + numeroAumentado;
+
+	return numeroConAumento;
+}
+
+float dividirFlotante(float numeroUno, float numeroDos)
+{
+	float resultado;
+
+	resultado = numeroUno / numeroDos;
+
+	return resultado;
+}
+
+float restarFlotante(float numeroUno, float numeroDos)
+{
+	float  resultado;
+
+	resultado = numeroUno - numeroDos;
+
+	return resultado;
+}
+
+float multilicarFlotante(float numeroUno, float numeroDos)
+{
+	float resultado;
+
+	return resultado;
+}
+
+
+double pasarAMoneda(float valor, float moneda)
+{
+	double retorno;
+
+	retorno = (double)valor / moneda;
+
+	return retorno;
+}

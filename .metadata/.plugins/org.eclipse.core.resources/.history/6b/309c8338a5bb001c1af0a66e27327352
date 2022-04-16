@@ -1,0 +1,36 @@
+/*
+ * entradas.c
+ *
+ *  Created on: 10 abr. 2022
+ *      Author: wilo waiko
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+float pedirFlotante(char mensaje[])
+{
+	float numero;
+	printf("%s", mensaje);
+	scanf("%s", &numero);
+	return numero;
+}
+
+char pedirLetra(char mensaje[])
+{
+	char letra;
+	printf("%s", mensaje);
+	fflush(stdin);
+	scanf("%c", &letra);
+	return letra;
+}
+
+float reingresar(float numero, int minimo, int maximo, char mensaje1[], char mensaje2[])
+{
+	while(va == 0)
+	{
+		printf("Error.\n");
+		numero = pedirFlotante("Ingrese los grados Celcius nuevamente: ");
+	}
+	return numero;
+}

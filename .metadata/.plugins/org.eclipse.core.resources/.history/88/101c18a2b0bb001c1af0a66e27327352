@@ -1,0 +1,31 @@
+/*
+ * operaciones.c
+ *
+ *  Created on: 10 abr. 2022
+ *      Author: wilo waiko
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+float calcularDescuento(float numero, int porcentaje)
+{
+	float numeroDescontado;
+	float numeroConDescuento;
+
+	numeroDescontado = (float)numero * porcentaje / 100;
+	numeroConDescuento = (float)numero - numeroDescontado;
+
+	return numeroConDescuento;
+}
+
+float calcularAumento(float numero, int porcentaje)
+{
+	float numeroDescontado;
+	float numeroConDescuento;
+
+	numeroDescontado = (float)numero * porcentaje / 100;
+	numeroConDescuento = (float)numero + numeroDescontado;
+
+	return numeroConDescuento;
+}

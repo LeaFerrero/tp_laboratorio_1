@@ -1,0 +1,5 @@
+19:42:54 **** Incremental Build of configuration Debug for project TP_1 ****
+Info: Internal Builder is used for build
+gcc -o TP_1.exe "src\\TP_1.o" "src\\entradas.o" "src\\operaciones.o" "src\\salidas.o" "src\\validaciones.o" 
+Info: Nothing to build for TP_1
+Info: Nothing to build for TP_1

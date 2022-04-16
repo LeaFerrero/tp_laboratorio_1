@@ -1,0 +1,83 @@
+/*
+ * operaciones.c
+ *
+ *  Created on: 10 abr. 2022
+ *      Author: Leandro Ferrero
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/// @fn float sumarFlotante(int, int)
+/// @brief Fecive dos flotante, los suma y retorna el resultado
+///
+/// @param numeroUno Primer flotante que va a ser sumado.
+/// @param numeroDos Segundo flotante a ser sumado.
+/// @return el resultado de la suma.
+
+float sumarFlotante(float numeroUno, float numeroDos)
+{
+	float resultado;
+
+	resultado = numeroUno +numeroDos;
+
+	return resultado;
+}
+
+float restarFlotante(float numeroUno, float numeroDos)
+{
+	float  resultado;
+
+	resultado = numeroUno - numeroDos;
+
+	return resultado;
+}
+
+float multilicarFlotante(float numeroUno, float numeroDos)
+{
+	float resultado;
+
+	resultado = numeroUno * numeroDos;
+
+	return resultado;
+}
+
+float dividirFlotante(float numeroUno, float numeroDos)
+{
+	float resultado;
+
+	resultado = numeroUno / numeroDos;
+
+	return resultado;
+}
+
+float calcularDescuento(float numero, int porcentaje)
+{
+	float numeroDescontado;
+	float numeroConDescuento;
+
+	numeroDescontado = multilicarFlotante(numero, porcentaje) / 100;
+	numeroConDescuento = restarFlotante(numero, numeroDescontado);
+
+	return numeroConDescuento;
+}
+
+float calcularAumento(float numero, int porcentaje)
+{
+	float numeroAumentado;
+	float numeroConAumento;
+
+	numeroAumentado = multilicarFlotante(numero, porcentaje) / 100;
+	numeroConAumento = sumarFlotante(numero, numeroAumentado);
+
+	return numeroConAumento;
+}
+
+double pasarAMoneda(float valor, float moneda)
+{
+	double retorno;
+
+	retorno = (double)valor / moneda;
+
+	return retorno;
+}

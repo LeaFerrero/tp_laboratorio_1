@@ -5,8 +5,6 @@
  *      Author: Leandro Ferrero
  */
 
-#include <stdio.h>
-#include <stdlib.h>
 
 /// @fn float sumarFlotante(int, int)
 /// @brief Fecive dos flotante, los suma y retorna el resultado.

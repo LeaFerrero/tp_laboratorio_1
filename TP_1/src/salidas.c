@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "validaciones.h"
 
 /// @fn void imprimirResultados(float, float, float, float, float, float, float, float, float, float, float, float)
 /// @brief Recibe los los flotantes y los imprime con un mensaje para informar al usuario.
@@ -42,4 +43,21 @@ void imprimirResultados(float km, float precioAerolineas, float precioLatam, flo
 	printf("e) Mostrar precio unitario: $ %.2f\n\n", latamPorKm);
 
 	printf("La diferencia de precio es: $ %.2f\n\n", diferenciaPrecio);
+}
+
+
+/// @fn void imprimirMensajeBandera(int, int, char[], float)
+/// @brief Se llama a la funcion validarEsMayor como condicion de un if para que imprima un mensaje en caso de cumplirse la condicion.
+/// Si la funcion validarEsMayor retorna 1 se cumple la condicion e imprime el mensaje y muestra el numero flotante que recive.
+///
+/// @param numero El número entero a ser comparado.
+/// @param minimo El número entero con el que se va a comparar el primer entero.
+/// @param mensaje Mensaje que se va a mostrar.
+/// @param numeroAMostrar El número flotante que se va a mostrar en el mnensaje.
+void imprimirMensajeBandera(int numero, int minimo, char mensaje [], float numeroAMostrar)
+{
+	if(validarEsMayorEntero(numero, minimo) == 1)
+	{
+		printf("(%s %.2f) ", mensaje, numeroAMostrar);
+	}
 }

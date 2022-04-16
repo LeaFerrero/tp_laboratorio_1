@@ -1,0 +1,50 @@
+/*
+ * entradas.c
+ *
+ *  Created on: 10 abr. 2022
+ *      Author: Leandro Ferrero
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include "validaciones.h"
+
+float pedirFlotante(char mensaje[])
+{
+	float numero;
+	printf("%s", mensaje);
+	scanf("%f", &numero);
+	return numero;
+}
+
+char pedirLetra(char mensaje[])
+{
+	char letra;
+	printf("%s", mensaje);
+	fflush(stdin);
+	scanf("%c", &letra);
+	letra = toupper(letra);
+	return letra;
+}
+
+float reingresarFlotante(float numero, int aComparar, char mensajeUno[], char mensajeDos[])
+{
+	while(validarEsMayor(numero, aComparar) == 0)
+	{
+		printf("%s", mensajeUno);
+		numero = pedirFlotante(mensajeDos);
+	}
+	return numero;
+}
+
+char reingresarChar(char letraA, char letraB, char letraC, char mensajeUno[], char mensajeDos[])
+{
+	while(validarLetra(letraA, letraB, letraC) == 0)
+	{
+		printf("%s", mensajeUno);
+		letraA = pedirLetra(mensajeDos);
+		letraA = toupper(letraA);
+	}
+	return letraA;
+}

@@ -11,7 +11,7 @@
 #include "validaciones.h"
 
 /// @fn float pedirFlotante(char[])
-/// @brief Pide un numero flotante al usuario y lo retorna.
+/// @brief Pide un flotante al usuario y lo retorna.
 ///
 /// @param mensaje Es el mensaje a ser mostrado.
 /// @return El numero flotante ingresado.
@@ -46,8 +46,8 @@ char pedirLetra(char mensaje[])
 /// Cuando el bucle se corta se retorna el flotante.
 ///
 ///
-/// @param numero Numero flotante a ser comparado que se va a pasar a la funcion validarEsMayor.
-/// @param comparante Es el numero que se le va a pasar a la funcion vlidarEsMayor y con la que se va a comparar el numero ingresado.
+/// @param numero Flotante a ser comparado que se va a pasar a la funcion validarEsMayor.
+/// @param comparante Es el número que se le va a pasar a la funcion vlidarEsMayor y con la que se va a comparar el número ingresado.
 /// @param primerMensaje Mensaje que se va a pasar a la funcion validarEsMayor y se mostrara en caso que retorne 0.
 /// @param segundoMensaje Mensaje que se va a pasar a la funcion pedirFlotante y se mostrara en caso de que validarEsMayor retorne 0.
 /// @return un nuumero flotante.

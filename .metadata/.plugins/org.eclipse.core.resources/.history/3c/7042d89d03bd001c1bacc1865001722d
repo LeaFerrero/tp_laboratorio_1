@@ -1,0 +1,16 @@
+/*
+ * salidas.h
+ *
+ *  Created on: 15 abr. 2022
+ *      Author: wilo waiko
+ */
+
+#ifndef SALIDAS_H_
+#define SALIDAS_H_
+
+void imprimirresultados(float km, float precioAerolineas, float precioLatam,
+						float debitoAerolineas, float debitoLatam, float creditoAerolineas,
+						float creditoLatam, float bitCoinAerolineas, float bitCoinLatam,
+						float aerolineasPorKm, float latamPorKm, float diferenciaPrecio);
+
+#endif /* SALIDAS_H_ */

@@ -1,0 +1,15 @@
+/*
+ * operaciones.h
+ *
+ *  Created on: 10 abr. 2022
+ *      Author: wilo waiko
+ */
+#include <stdio.h>
+#include <stdlib.h>
+
+#ifndef OPERACIONES_H_
+#define OPERACIONES_H_
+
+int calcularDescento(int, int);
+
+#endif /* OPERACIONES_H_ */

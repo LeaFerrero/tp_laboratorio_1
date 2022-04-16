@@ -1,0 +1,69 @@
+/*
+ * entradas.c
+ *
+ *  Created on: 10 abr. 2022
+ *      Author: Leandro Ferrero
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include "validaciones.h"
+
+/// @fn float pedirFlotante(char[])
+/// @brief Pide un numero flotante al usuario y lo retorna.
+///
+/// @param mensaje Es el mensaje a ser mostrado.
+/// @return El numero flotante ingresado.
+float pedirFlotante(char mensaje[])
+{
+	float numero;
+	printf("%s", mensaje);
+	scanf("%f", &numero);
+	return numero;
+}
+
+/// @fn char pedirLetra(char[])
+/// @brief Pide una letra al usuario, la pasa a ma la retorna.
+///
+/// @param mensaje El mensaje a ser mostrado-
+/// @return La letra ingresada
+char pedirLetra(char mensaje[])
+{
+	char letra;
+	printf("%s", mensaje);
+	fflush(stdin);
+	scanf("%c", &letra);
+	letra = toupper(letra);
+	return letra;
+}
+
+float reingresarFlotante(float numero, int comparante, char orimerMensaje[], char segundoMensaje[])
+{
+	while(validarEsMayor(numero, comparante) == 0)
+	{
+		printf("%s", primerMensaje );
+		numero = pedirFlotante(mensajeDos);
+	}
+	return numero;
+}
+
+/// @fn char reingresarChar(char, char, char, char[], char[])
+/// @brief
+///
+/// @param letraA
+/// @param letraB
+/// @param letraC
+/// @param mensajeUno
+/// @param mensajeDos
+/// @return
+char reingresarChar(char letra, char comparanteA, char comparanteB, char primerMensaje[], char segundoMensaje[])
+{
+	while(validarLetra(letra, comparanteA, comparanteB) == 0)
+	{
+		printf("%s", primerMensaje);
+		letra = pedirLetra(segundoMensaje);
+		letra = toupper(letra);
+	}
+	return letra;
+}

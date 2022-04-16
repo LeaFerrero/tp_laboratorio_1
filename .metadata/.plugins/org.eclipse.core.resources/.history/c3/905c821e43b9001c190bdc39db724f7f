@@ -1,0 +1,18 @@
+/*
+ * operaciones.c
+ *
+ *  Created on: 10 abr. 2022
+ *      Author: wilo waiko
+ */
+
+
+int calcularDescuento(int numero, int porcentaje)
+{
+	int numeroDescontado;
+	int numeroConDescuento;
+
+	numeroDescontado = (numero * 100) / porcentaje;
+	numeroConDescuento = numero - numeroDescontado;
+
+	return numeroConDescuento;
+}

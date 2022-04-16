@@ -1,0 +1,23 @@
+/*
+ * entradas.h
+ *
+ *  Created on: 10 abr. 2022
+ *      Author: Leandro Ferrero
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#ifndef ENTRADAS_H_
+#define ENTRADAS_H_
+
+char pedirLetra(char mensaje[]);
+
+char reingresarChar(char letra, char aComparar, char mensajeUno[], char mensajeDos[]);
+
+float pedirFlotante(char mensaje[]);
+
+float reingresarFlotante(float numero, int aComparar, char mensajeUno[], char mensajeDos[]);
+
+
+#endif /* ENTRADAS_H_ */

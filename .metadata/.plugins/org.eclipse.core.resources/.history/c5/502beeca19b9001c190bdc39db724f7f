@@ -1,0 +1,18 @@
+/*
+ * entradas.h
+ *
+ *  Created on: 10 abr. 2022
+ *      Author: wilo waiko
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#ifndef ENTRADAS_H_
+#define ENTRADAS_H_
+
+int pedirEntero(char mensaje[]);
+
+char getChar(char mensaje[]);
+
+#endif /* ENTRADAS_H_ */

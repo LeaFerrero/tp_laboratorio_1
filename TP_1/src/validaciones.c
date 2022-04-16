@@ -5,19 +5,37 @@
  *      Author: Leandro Ferrero
  */
 
-#include <stdio.h>
-#include <stdlib.h>
 
 
 /// @fn int validarEsMayor(int, int)
-/// @brief Recibe un flotante y un entero y los compara con un entero,
-/// si el flotante es mas chico que entero retorna 0,
-/// si el flotante es mas grande retorna 1.
+/// @brief Recibe un flotante y un entero y los un entero,
+/// si el flotante es mas chico que entero retorna 0, si no retorna 1
 ///
 /// @param numero El flotante a comparar.
 /// @param comparante El enero con el que se va a comparar el flotante.
 /// @return	0 si el flotante es mas chico y 1 si el flotante es mas grande.
 int validarEsMayor(float numero, int comparante)
+{
+	int retorno;
+
+	retorno = 1;
+
+	if(numero < comparante)
+	{
+		retorno = 0;
+	}
+
+	return retorno;
+}
+
+///// @fn int validarEsMayor(int, int)
+/// @brief Recibe dos enteros y los compara.
+/// si el primer entero es menor retorna 0, si no retorna 1.
+///
+/// @param numero El entero a comparar.
+/// @param comparante El enero con el que se va a comparar el primer entero.
+/// @return	0 si el primer entero es mas chico que el segundo, 1 si es mas grande.
+int validarEsMayorEntero(int numero, int comparante)
 {
 	int retorno;
 

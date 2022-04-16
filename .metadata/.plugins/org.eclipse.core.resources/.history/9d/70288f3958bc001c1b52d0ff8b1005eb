@@ -1,0 +1,39 @@
+/*
+ * validaciones.c
+ *
+ *  Created on: 10 abr. 2022
+ *      Author: Leandro Ferrero
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int validarEsMayor(int numero, int comparante)
+{
+	int retorno;
+
+	retorno = 0;
+
+	if(numero > comparante)
+	{
+		retorno = 1;
+	}
+
+	return retorno;
+}
+
+char validarLetra(char letra, char comparanteA, char comparanteB)
+{
+	char retorno;
+
+	retorno = 0;
+
+	if(letra == comparanteA || letra == comparanteB)
+	{
+		retorno = 1;
+	}
+
+	return retorno;
+}
+
+

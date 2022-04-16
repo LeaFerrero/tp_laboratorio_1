@@ -1,0 +1,26 @@
+/*
+ * entradas.c
+ *
+ *  Created on: 10 abr. 2022
+ *      Author: wilo waiko
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int getInt(char mensaje[])
+{
+	int numero;
+	printf("%s", mensaje);
+	scanf("%d", &numero);
+	return numero;
+}
+
+char getChar(char mensaje[])
+{
+	char letra;
+	printf("%s", mensaje);
+	fflush(stdin);
+	scanf("%c", &letra);
+	return letra;
+}

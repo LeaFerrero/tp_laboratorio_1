@@ -58,9 +58,9 @@ int mostrarMenuListar()
 	int opcion;
 	printf("\n*****MENU DE LISTADOS*****");
 	printf("\n1) Alfabeticamente, appelido y tipo.");
-	printf("\n2) total, promedio y cuantos superan el promedio.");
+	printf("\n2) Total, promedio y cuantos superan el promedio.");
 	printf("\n3) Codigo de vuelo y activos.");
-	printf("\n4) volver al menu principal.");
+	printf("\n4) Volver al menu principal.");
 	printf("\nIngrese una opcion: ");
 	opcion = getInt();
 

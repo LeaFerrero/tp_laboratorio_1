@@ -10,10 +10,11 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+
+#include "ArrayPassenger.h"
 #include "entradas.h"
 #include "menu.h"
-#include "passenger.h"
-#include "typePassenger.h"
+#include "TypePassenger.h"
 
 #define CANT 2000
 #define CANT_STATUS 4

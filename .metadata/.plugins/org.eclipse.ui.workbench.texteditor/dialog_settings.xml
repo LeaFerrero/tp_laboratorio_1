@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="default"/>
+		<item key="selection" value="searchForValidID"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
-			<item value="numero"/>
-			<item value="se estan"/>
-			<item value="recive"/>
-			<item value="default"/>
-			<item value="pause"/>
-			<item value="reingresar"/>
+			<item value="Passenger_buscarPorIDValido"/>
+			<item value="save"/>
+			<item value="buscar"/>
+			<item value="saveC"/>
+			<item value="add"/>
+			<item value="esSolo"/>
+			<item value="esLetras"/>
+			<item value="getIn"/>
 		</list>
 		<list key="replacehistory">
+			<item value="searchForValidID"/>
+			<item value="statusFlight"/>
+			<item value="startsFlight"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">

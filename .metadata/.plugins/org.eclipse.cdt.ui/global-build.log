@@ -1,5 +1,141 @@
-19:42:54 **** Incremental Build of configuration Debug for project TP_1 ****
+22:11:13 **** Incremental Build of configuration Debug for project TP_[2] ****
 Info: Internal Builder is used for build
-gcc -o TP_1.exe "src\\TP_1.o" "src\\entradas.o" "src\\operaciones.o" "src\\salidas.o" "src\\validaciones.o" 
-Info: Nothing to build for TP_1
-Info: Nothing to build for TP_1
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\entradas.o" "..\\src\\entradas.c" 
+gcc -o TP_[2].exe "src\\TP_2.o" "src\\entradas.o" "src\\menu.o" "src\\passenger.o" "src\\statusFlight.o" "src\\typePassenger.o" 
+Info: Nothing to build for TP_[2]
+22:38:12 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\passenger.o" "..\\src\\passenger.c" 
+..\src\passenger.c: In function 'Passenger_buscarPorIDValido':
+..\src\passenger.c:237:6: warning: unused variable 'opcion' [-Wunused-variable]
+  237 |  int opcion;
+      |      ^~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_[2].exe "src\\TP_2.o" "src\\entradas.o" "src\\menu.o" "src\\passenger.o" "src\\statusFlight.o" "src\\typePassenger.o" 
+22:38:24 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\passenger.o" "..\\src\\passenger.c" 
+gcc -o TP_[2].exe "src\\TP_2.o" "src\\entradas.o" "src\\menu.o" "src\\passenger.o" "src\\statusFlight.o" "src\\typePassenger.o" 
+Info: Nothing to build for TP_[2]
+22:41:38 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\passenger.o" "..\\src\\passenger.c" 
+gcc -o TP_[2].exe "src\\TP_2.o" "src\\entradas.o" "src\\menu.o" "src\\passenger.o" "src\\statusFlight.o" "src\\typePassenger.o" 
+22:43:15 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\passenger.o" "..\\src\\passenger.c" 
+..\src\passenger.c: In function 'Passenger_buscarPorIDValido':
+..\src\passenger.c:258:36: error: expected ';' before 'break'
+  258 |     printf("\nVolviendo al menu\n")
+      |                                    ^
+      |                                    ;
+  259 |     break;
+      |     ~~~~~                           
+22:45:41 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\passenger.o" "..\\src\\passenger.c" 
+gcc -o TP_[2].exe "src\\TP_2.o" "src\\entradas.o" "src\\menu.o" "src\\passenger.o" "src\\statusFlight.o" "src\\typePassenger.o" 
+Info: Nothing to build for TP_[2]
+22:47:27 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\passenger.o" "..\\src\\passenger.c" 
+gcc -o TP_[2].exe "src\\TP_2.o" "src\\entradas.o" "src\\menu.o" "src\\passenger.o" "src\\statusFlight.o" "src\\typePassenger.o" 
+22:48:48 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\passenger.o" "..\\src\\passenger.c" 
+gcc -o TP_[2].exe "src\\TP_2.o" "src\\entradas.o" "src\\menu.o" "src\\passenger.o" "src\\statusFlight.o" "src\\typePassenger.o" 
+22:49:58 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\passenger.o" "..\\src\\passenger.c" 
+gcc -o TP_[2].exe "src\\TP_2.o" "src\\entradas.o" "src\\menu.o" "src\\passenger.o" "src\\statusFlight.o" "src\\typePassenger.o" 
+22:53:17 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\passenger.o" "..\\src\\passenger.c" 
+gcc -o TP_[2].exe "src\\TP_2.o" "src\\entradas.o" "src\\menu.o" "src\\passenger.o" "src\\statusFlight.o" "src\\typePassenger.o" 
+Info: Nothing to build for TP_[2]
+22:55:37 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\passenger.o" "..\\src\\passenger.c" 
+gcc -o TP_[2].exe "src\\TP_2.o" "src\\entradas.o" "src\\menu.o" "src\\passenger.o" "src\\statusFlight.o" "src\\typePassenger.o" 
+22:58:09 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\passenger.o" "..\\src\\passenger.c" 
+gcc -o TP_[2].exe "src\\TP_2.o" "src\\entradas.o" "src\\menu.o" "src\\passenger.o" "src\\statusFlight.o" "src\\typePassenger.o" 
+22:59:15 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\passenger.o" "..\\src\\passenger.c" 
+gcc -o TP_[2].exe "src\\TP_2.o" "src\\entradas.o" "src\\menu.o" "src\\passenger.o" "src\\statusFlight.o" "src\\typePassenger.o" 
+23:00:48 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\passenger.o" "..\\src\\passenger.c" 
+gcc -o TP_[2].exe "src\\TP_2.o" "src\\entradas.o" "src\\menu.o" "src\\passenger.o" "src\\statusFlight.o" "src\\typePassenger.o" 
+23:02:37 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\passenger.o" "..\\src\\passenger.c" 
+gcc -o TP_[2].exe "src\\TP_2.o" "src\\entradas.o" "src\\menu.o" "src\\passenger.o" "src\\statusFlight.o" "src\\typePassenger.o" 
+23:04:04 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\passenger.o" "..\\src\\passenger.c" 
+gcc -o TP_[2].exe "src\\TP_2.o" "src\\entradas.o" "src\\menu.o" "src\\passenger.o" "src\\statusFlight.o" "src\\typePassenger.o" 
+23:20:06 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\passenger.o" "..\\src\\passenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_[2].exe "src\\TP_2.o" "src\\entradas.o" "src\\menu.o" "src\\passenger.o" "src\\statusFlight.o" "src\\typePassenger.o" 
+Info: Nothing to build for TP_[2]
+Info: Nothing to build for TP_[2]
+23:25:01 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\passenger.o" "..\\src\\passenger.c" 
+gcc -o TP_[2].exe "src\\TP_2.o" "src\\entradas.o" "src\\menu.o" "src\\passenger.o" "src\\statusFlight.o" "src\\typePassenger.o" 
+23:27:57 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TypePassenger.o" "..\\src\\TypePassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\StatusFlight.o" "..\\src\\StatusFlight.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\StatusFlight.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\entradas.o" "src\\menu.o" 
+23:36:32 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\entradas.o" "..\\src\\entradas.c" 
+..\src\entradas.c: In function 'esSoloLetras':
+..\src\entradas.c:238:9: warning: variable 'contadorLetras' set but not used [-Wunused-but-set-variable]
+  238 |     int contadorLetras;
+      |         ^~~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\StatusFlight.o" "..\\src\\StatusFlight.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TypePassenger.o" "..\\src\\TypePassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\StatusFlight.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\entradas.o" "src\\menu.o" 
+23:48:31 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\entradas.o" "..\\src\\entradas.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\StatusFlight.o" "..\\src\\StatusFlight.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TypePassenger.o" "..\\src\\TypePassenger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\TP_2.o" "..\\src\\TP_2.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\StatusFlight.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\entradas.o" "src\\menu.o" 
+23:52:38 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\menu.o" "..\\src\\menu.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\entradas.o" "..\\src\\entradas.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\StatusFlight.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\entradas.o" "src\\menu.o" 
+23:52:53 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\StatusFlight.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\entradas.o" "src\\menu.o" 
+23:53:25 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\StatusFlight.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\entradas.o" "src\\menu.o" 
+23:54:41 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ArrayPassenger.o" "..\\src\\ArrayPassenger.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\StatusFlight.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\entradas.o" "src\\menu.o" 
+23:56:39 **** Incremental Build of configuration Debug for project TP_[2] ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\entradas.o" "..\\src\\entradas.c" 
+gcc -o TP_[2].exe "src\\ArrayPassenger.o" "src\\StatusFlight.o" "src\\TP_2.o" "src\\TypePassenger.o" "src\\entradas.o" "src\\menu.o" 

@@ -86,81 +86,48 @@ int getInt(void)
 	return retorno;
 }
 
-
-/// @fn int esNumerico(char[], int)
-/// @brief Verifica si la cadena esta compuesta solo por letras, aceptando puntos y/o comas.
+/// @fn int estaEnRango(int, int, int)
+/// @brief Verifica que el numero este debtro del rango
 ///
-/// @param cadena Array con la cadena a ser analizada
-/// @param longitud Longitud de la cadena.
-/// @return 1 si es nœmerico y 0 si no lo es
-int esSoloLetras(char cadena[], int longitud)
-{
-    int retorno;
-    int i;
-
-    retorno = 1;
-    for(i = 0; i < longitud && cadena[i] != '\0'; i++)
-    {
-
-    	if(cadena[i] == '.' || cadena[i] == ',' || cadena [i] == 'ñ')
-    	{
-    		continue;
-    	}
-        if(cadena[i] != ' ' && !isalpha(cadena[i]))
-        {
-           	retorno = 0;
-        	break;
-        }
-    }
-
-    return retorno;
-}
-
-/// @fn int esAlfaNumerico(char[], int)
-/// @brief Verifica si la cadena esta compuesta solo por letras y/o numeros.
-///
-/// @param cadena Array con la cadena a ser analizada
-/// @param longitud Longitud de la cadena.
-/// @return 1 si es alfa nœmerica y 0 si no lo es
-int esAlfaNumerico(char cadena[], int longitud)
-{
-    int retorno;
-    int i;
-
-    retorno = 1;
-    for(i = 0; i < longitud && cadena[i] != '\0'; i++)
-    {
-        if(!isalpha(cadena[i]) && !isdigit(cadena[i]))
-        {
-        	retorno = 0;
-        	break;
-        }
-    }
-
-    return retorno;
-}
-
-/// @fn int getStringLetras(char[], int)
-/// @brief Verifica si la cadena esta compuesta solo por letras,
-/// de ser asi la copia.
-///
-/// @param cadena Array con la cadena a ser analizada
-/// @param longitud Longitud de la cadena
-/// @return Retorna 1 si la cadena esta compuesta solo por letras y 0 si no
-int getStringLetras(char cadena[], int longitud)
+/// @param numero El numero a er abalizado
+/// @param minimo Es el numero minimo a ser aceptado
+/// @param maximo Es el minimo maximo a ser aceptado
+/// @return
+int estaEnRangoInt(int numero, int minimo, int maximo)
 {
 	int retorno;
-	char auxiliar[51];
-	retorno = 0;
-	if(getString(auxiliar, sizeof(auxiliar)) == 0 && esSoloLetras(auxiliar, sizeof(auxiliar)))
+
+	retorno = 1;
+
+	if(numero < minimo || numero > maximo)
 	{
-		if(strnlen(auxiliar, sizeof(auxiliar)) <= longitud)
-		{
-			strncpy(cadena, auxiliar, longitud);
-			retorno = 1;
-		}
+		retorno = 0;
 	}
 	return retorno;
+}
+
+///@fn int getValidInt(char[], char[], int, int)
+///@brief Solicita un numero entero al usuario, luego de verificarlo devuelve el resultado
+///@param mensaje Es el mensaje a ser mostrado
+///@param mensajeError Es el mensaje de Error a ser mostrado
+///@param minimo Es el numero maximo a ser aceptado
+///@param maximo Es el minimo minimo a ser aceptado
+///@return Retorna el numero entero
+int getValidInt(char mensaje[], char mensajeError[], float minimo, float maximo)
+{
+	int numero;
+
+	printf("%s: ", mensaje);
+	numero = getInt();
+
+	while(!estaEnRangoInt(numero, minimo, maximo))
+	{
+		printf("%s\n", mensajeError);
+		printf("%s: ", mensaje);
+		numero = getInt();
+	}
+
+	return numero;
 }
 
 /// @fn int esNumericoFlotante(char[], int)
@@ -212,50 +179,6 @@ float getFloat(void)
 	return retorno;
 }
 
-///@fn int getValidInt(char[], char[], int, int)
-///@brief Solicita un numero entero al usuario, luego de verificarlo devuelve el resultado
-///@param mensaje Es el mensaje a ser mostrado
-///@param mensajeError Es el mensaje de Error a ser mostrado
-///@param minimo Es el numero maximo a ser aceptado
-///@param maximo Es el minimo minimo a ser aceptado
-///@return Retorna el numero entero
-int getValidInt(char mensaje[], char mensajeError[], float minimo, float maximo)
-{
-	int numero;
-
-	printf("%s: ", mensaje);
-	numero = getInt();
-
-	while(!estaEnRangoInt(numero, minimo, maximo))
-	{
-		printf("%s.\n", mensajeError);
-		printf("%s: ", mensaje);
-		numero = getInt();
-	}
-
-	return numero;
-}
-
-/// @fn int estaEnRango(int, int, int)
-/// @brief Verifica que el numero este debtro del rango
-///
-/// @param numero El numero a er abalizado
-/// @param minimo Es el numero minimo a ser aceptado
-/// @param maximo Es el minimo maximo a ser aceptado
-/// @return
-int estaEnRangoInt(int numero, int minimo, int maximo)
-{
-	int retorno;
-
-	retorno = 1;
-
-	if(numero < minimo || numero > maximo)
-	{
-		retorno = 0;
-	}
-	return retorno;
-}
-
 /// @fn int estaEnRango(float, float, float)
 /// @brief Verifica que el numero este debtro del rango
 ///
@@ -276,6 +199,7 @@ int estaEnRangoFloat(float numero, float minimo, float maximo)
 	return retorno;
 }
 
+
 /// @fn float getValidFloat(char[], char[], int, int)
 /// @brief  Solicita un numero flotante al usuario, luego de verificarlo devuelve el resultado
 ///
@@ -293,12 +217,63 @@ float getValidFloat(char mensaje[], char mensajeError[], int minimo, int maximo)
 
 	while(!estaEnRangoFloat(numero, minimo, maximo))
 	{
-		printf("%s.", mensajeError);
+		printf("%s", mensajeError);
 		printf("\n%s: ", mensaje);
 		numero = getFloat();
 	}
 
 	return numero;
+}
+
+/// @fn int esSoloLetras(char[], int)
+/// @brief Verifica si la cadena esta compuesta solo por letras.
+///
+/// @param cadena Array con la cadena a ser analizada
+/// @param longitud Longitud de la cadena.
+/// @return 1 si es nœmerico y 0 si no lo es
+int esSoloLetras(char cadena[], int longitud)
+{
+    int retorno;
+    int i;
+    retorno = 1;
+    for(i = 0; i < longitud && cadena[i] != '\0'; i++)
+    {
+
+    	if(cadena [i] == 'ñ')
+    	{
+    		continue;
+    	}
+        if(cadena[i] != ' ' && !isalpha(cadena[i]))
+        {
+           	retorno = 0;
+        	break;
+        }
+    }
+
+    return retorno;
+}
+
+/// @fn int getStringLetras(char[], int)
+/// @brief Verifica si la cadena esta compuesta solo por letras,
+/// de ser asi la copia.
+///
+/// @param cadena Array con la cadena a ser analizada
+/// @param longitud Longitud de la cadena
+/// @return Retorna 1 si la cadena esta compuesta solo por letras y 0 si no
+int getStringLetras(char cadena[], int longitud)
+{
+	int retorno;
+	char auxiliar[51];
+	retorno = 0;
+	if(getString(auxiliar, sizeof(auxiliar)) == 0 && esSoloLetras(auxiliar, sizeof(auxiliar)))
+	{
+		if(strnlen(auxiliar, sizeof(auxiliar)) <= longitud)
+		{
+			strncpy(cadena, auxiliar, longitud);
+			retorno = 1;
+		}
+	}
+	return retorno;
 }
 
 /// @fn void getValidStingLetras(char[], int, char[], char[])
@@ -313,27 +288,34 @@ void getValidStingLetras(char cadena[], int longitud, char mensaje[], char mensa
 	printf("%s: ", mensaje);
 	while(!getStringLetras(cadena, longitud))
 	{
-		printf("%s.", mensajeError);
+		printf("%s", mensajeError);
 		printf("\n%s: ", mensaje);
 
 	}
 }
 
-/// @fn void getValidStingLetras(char[], int, char[], char[])
-/// @brief Solicita una cadena alfanumerica al usuario al usuario.
+/// @fn int esAlfaNumerico(char[], int)
+/// @brief Verifica si la cadena esta compuesta solo por letras y/o numeros.
 ///
-/// @param cadena
+/// @param cadena Array con la cadena a ser analizada
 /// @param longitud Longitud de la cadena.
-/// @param mensaje El mensaje a ser mostrado
-/// @param mensajeError El mensaje de error a ser mostrado
-void getValidStingAlfanumerico(char cadena[], int longitud, char mensaje[], char mensajeError[])
+/// @return 1 si es alfa nœmerica y 0 si no lo es
+int esAlfaNumerico(char cadena[], int longitud)
 {
-	printf("%s: ", mensaje);
-	while(!getStringAlfaNumerico(cadena, longitud))
-	{
-		printf("%s.", mensajeError);
-		printf("\n%s: ", mensaje);
-	}
+    int retorno;
+    int i;
+
+    retorno = 1;
+    for(i = 0; i < longitud && cadena[i] != '\0'; i++)
+    {
+        if(!isalpha(cadena[i]) && !isdigit(cadena[i]))
+        {
+        	retorno = 0;
+        	break;
+        }
+    }
+
+    return retorno;
 }
 
 /// @fn int getStringLetras(char[], int)
@@ -359,6 +341,27 @@ int getStringAlfaNumerico(char cadena[], int longitud)
 	return retorno;
 }
 
+/// @fn void getValidStingLetras(char[], int, char[], char[])
+/// @brief Solicita una cadena alfanumerica al usuario al usuario.
+///
+/// @param cadena
+/// @param longitud Longitud de la cadena.
+/// @param mensaje El mensaje a ser mostrado
+/// @param mensajeError El mensaje de error a ser mostrado
+void getValidStingAlfanumerico(char cadena[], int longitud, char mensaje[], char mensajeError[])
+{
+	printf("%s: ", mensaje);
+	while(!getStringAlfaNumerico(cadena, longitud))
+	{
+		printf("%s", mensajeError);
+		printf("\n%s: ", mensaje);
+	}
+}
+
+/// @fn void primeraMayuscula(char[])
+/// @brief Pasa a mayuscula la primera letra de la cadena
+///
+/// @param cadena Cadena a la que le va a poner en mayuscula la primer letra.
 void primeraMayuscula(char cadena[])
 {
 	int i;
@@ -377,21 +380,80 @@ void primeraMayuscula(char cadena[])
 	}
 }
 
-/// @fn void getValidStingLetras(char[], int, char[], char[])
-/// @brief Solicita una cadena al usuario compuesta solo por letras y pasa la primera letra a mayuscula
+/// @fn int esSoloLetras(char[], int)
+/// @brief Verifica si la cadena esta compuesta solo por letrasy tiene mas de 3. aceptando puntos y ñ,
 ///
-/// @param cadena
+/// @param cadena Array con la cadena a ser analizada
+/// @param longitud Longitud de la cadena.
+/// @return 1 si es solo letras y 0 si no lo es
+int esSoloLetrasNombre(char cadena[], int longitud)
+{
+    int retorno;
+    int i;
+    int contador;
+
+    retorno = 1;
+    contador = 0;
+    for(i = 0; i < longitud && cadena[i] != '\0'; i++)
+    {
+    	if(isalpha(cadena[i]) || cadena[i] == 'ñ' || cadena[i] == 'Ñ' )
+    	{
+    		contador ++;
+    	}
+    	if(cadena [i] == 'ñ' || cadena[i] == 'Ñ' || cadena[i] == '.')
+    	{
+    		continue;
+    	}
+        if(cadena[i] != ' ' && !isalpha(cadena[i]))
+        {
+           	retorno = 0;
+        	break;
+        }
+    }
+    if(contador < 2)
+    {
+    	retorno = 0;
+    }
+    return retorno;
+}
+
+/// @fn int getStringLetras(char[], int)
+/// @brief Verifica si la cadena esta compuesta por letras y tenga mas de 3 caracteres,
+/// de ser asi la copia.
+///
+/// @param cadena Array con la cadena a ser analizada
+/// @param longitud Longitud de la cadena
+/// @return Retorna 1 si la cadena esta compuesta solo por letras y 0 si no
+int getStringNombre(char cadena[], int longitud)
+{
+	int retorno;
+	char auxiliar[51];
+	retorno = 0;
+	if(getString(auxiliar, sizeof(auxiliar)) == 0 && esSoloLetrasNombre(auxiliar, sizeof(auxiliar)))
+	{
+		if(strnlen(auxiliar, sizeof(auxiliar)) <= longitud)
+		{
+			strncpy(cadena, auxiliar, longitud);
+			retorno = 1;
+		}
+	}
+	return retorno;
+}
+
+/// @fn void getValidStingLetras(char[], int, char[], char[])
+/// @brief Solicita una cadena al usuario compuesta solo por letras y que contenga mas de 3 caracteres y pasa la primera letra a mayuscula
+///
+/// @param cadena Array con la cadena.
 /// @param longitud Longitud de la cadena.
 /// @param mensaje El mensaje a ser mostrado
 /// @param mensajeError El mensaje de error a ser mostrado
 void getValidStingLetrasNombre(char cadena[], int longitud, char mensaje[], char mensajeError[])
 {
 	printf("%s: ", mensaje);
-	while(!getStringLetras(cadena, longitud))
+	while(!getStringNombre(cadena, longitud))
 	{
-		printf("%s.", mensajeError);
+		printf("%s", mensajeError);
 		printf("\n%s: ", mensaje);
-
 	}
 	primeraMayuscula(cadena);
 }

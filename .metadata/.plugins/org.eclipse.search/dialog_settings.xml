@@ -39,7 +39,8 @@
 		<item key="SEARCH_IN_BINARIES" value="false"/>
 		<item key="HISTORY_SIZE" value="0"/>
 		<section name="EXTENSIONS">
-			<item key="0" value="*.c"/>
+			<item key="0" value="*"/>
+			<item key="1" value="*.c"/>
 		</section>
 	</section>
 </section>

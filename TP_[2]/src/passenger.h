@@ -48,6 +48,7 @@ int loadPassenger(Passenger list[], int len, TypePassenger listType[], int typeL
 int findPassengerById(Passenger* list, int len,int id);
 int getFreeIndex(Passenger list[], int len);
 int Passenger_buscarPorIDValido(Passenger list[], int len);
+int searchAgain();
 
 /** MOSTRAR */
 void showOnePassenger(Passenger list, TypePassenger listType, StatusFlight listStatus);

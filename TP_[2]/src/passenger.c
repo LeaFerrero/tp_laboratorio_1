@@ -225,16 +225,16 @@ int findPassengerById(Passenger* list, int len,int id)
 
 
 /// @fn int Passenger_buscarPorIDValido(Passenger[], int)
-/// @brief
+/// @brief Le pide al usuario que ingrese un ID, si es valido guarada el indice
+/// y lo retorna, si no lre pregunta al usario si quiere buscar otro.
 ///
-/// @param list
-/// @param len
-/// @return
+/// @param list Array de que contien los pasajeros.
+/// @param len Tamaño del array.
+/// @return Retorna el indice si lo consigui, si no retorna -1.
 int Passenger_buscarPorIDValido(Passenger list[], int len)
 {
 	int id;
 	int index;
-	int opcion;
 	int retorno;
 
 	retorno = -1;
@@ -250,22 +250,18 @@ int Passenger_buscarPorIDValido(Passenger list[], int len)
 		{
 			//MUESTRO QUE EL ID NO SE ENCONTRO
 			printf("\nID no encontrado.");
-
-			//MUESTRO UN MENU PREGUNTANDO SI QUIERE BUSCAR OTRO ID
-			opcion = mostrarMenuSN("\n¿Ingresar otro ID?");
-			switch(opcion)
+			//PREGUNTO SI QUIERE BUSCAR OTR
+			if(searchAgain())
 			{
-				//SI LA RESPUESTA SI VUELVE A ITERAR
-				case 1:
-					continue;
-				break;
-				case 2:
-					printf("\nVolviendo al menu");
-				break;
-
-				default:
-					printf("\nOpcion no valida");
+				//CONTINUIE PARA SI
+				continue;
 			}
+			else
+			{
+				//BREAK PARA NO
+				break;
+			}
+
 		}
 		else
 		{
@@ -273,7 +269,39 @@ int Passenger_buscarPorIDValido(Passenger list[], int len)
 			retorno = index;
 		}
 	}
-	while(retorno == -1 && opcion != 2);
+	while(retorno == -1);
+
+	return retorno;
+}
+
+/// @fn int searchAgain()
+/// @brief Pregunta al usuario si quiere buscar otro ID.
+///
+/// @return Retorna 1 si la respuesta fue SI o si 0 la respuesta fuen NO.
+int searchAgain()
+{
+	int retorno;
+	int opcion;
+
+	do
+	{
+		opcion = mostrarMenuSN("\n¿Ingresar otro ID?");
+			switch(opcion)
+			{
+				case 1:
+					retorno = 1;
+				break;
+
+				case 2:
+					printf("\nVolviendo al menu de modificaciones\n");
+					retorno = 0;
+				break;
+
+				default:
+					printf("\nOpcion no valida");
+			}
+	}
+	while(opcion != 1 && opcion != 2);
 
 	return retorno;
 }
@@ -281,22 +309,16 @@ int Passenger_buscarPorIDValido(Passenger list[], int len)
 /// @fn void showOnePassenger(Passenger, TypePassenger, StatusFlight)
 /// @brief Imprime por pantalla un pasajero.
 ///
-/// @param list
-/// @param listType
-/// @param listStatus
+/// @param list Variable de tipo estructura que contiene los datos del pasajero.
+/// @param listType Variable del tipo estructura que contiene los datos del tipo de pasajero.
+/// @param listStatus Variable del tipo estructuira que contiene los datos de los estados de vuelo.
 void showOnePassenger(Passenger list, TypePassenger listType, StatusFlight listStatus)
 {
 	//PRINTF DE UN SOLO PASAJERO
 	printf("%5d %20s %20s %20.2f %20s %20s %20s\n", list.id, list.name, list.lastName, list. price, list.flycode, listType.nameTypePassenger, listStatus.nameStatus );
 }
 
-/** \brief print the content of passengers array
-*
-* \param list Passenger*
-* \param length int
-* \return int
-*
-*/
+
 /// @fn int printPassenger(Passenger[], int, TypePassenger[], int, StatusFlight[], int)
 /// @brief Imprime por pantalla el contenido del array de pasajeros.
 ///
@@ -344,15 +366,6 @@ int printPassenger(Passenger list[], int len, TypePassenger listType[], int lenT
 	return retorno;
 }
 
-/** \brief Remove a Passenger by Id (put isEmpty Flag in 1)
-*
-* \param list Passenger*
-* \param len int
-* \param id int
-* \return int Return (-1) if Error [Invalid length or NULL pointer or if can't
-find a passenger] - (0) if Ok
-*
-*/
 
 /// @fn int removePassenger(Passenger*, int, int)
 /// @brief Remueve un pasajero por su ID (Pone isEptry en LIBRE (0))
@@ -380,7 +393,7 @@ int removePassenger(Passenger* list, int len, int id)
 }
 
 /// @fn int downPassenger(Passenger[], int, TypePassenger[], int, StatusFlight[], int)
-/// @brief
+/// @brief Si hay pasajeros los muestra, pide al usuario un ID valido y si esta lo da de baja.
 ///
 /// @param list Array que contien los pasajeros.
 /// @param len Tamaño del array de pasajeros.
@@ -388,7 +401,7 @@ int removePassenger(Passenger* list, int len, int id)
 /// @param lenType Tamaño del array de los tipos de pasajeros.
 /// @param listStatus Array que contiene el estado de los vuelos.
 /// @param lenStatus Tamaño del array que contiene el estado de los vuelos.
-/// @return
+/// @return Retorna 1 si dio de baja con exito o 0 si no tuvo extito.
 int downPassenger(Passenger list[], int len, TypePassenger listType[], int lenType, StatusFlight listStatus[], int lenStatus)
 {
 	int retorno;
@@ -411,7 +424,7 @@ int downPassenger(Passenger list[], int len, TypePassenger listType[], int lenTy
 		index = Passenger_buscarPorIDValido(list, len);
 
 		/**PREGUNTAR SI DESEA CONTINUAR*/
-		if(saveChanges())
+		if(index != -1 &&saveChanges())
 		{
 			//BAJA ACEPTADA - CAMBIO ESTADO A "BAJA"
 			 if(removePassenger(list, len, list[index].id) == 0)
